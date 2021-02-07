@@ -1,0 +1,31 @@
+--- libgda-6.0.0/providers/web/meson.build.orig	2021-02-01 01:29:25.249770600 +0100
++++ libgda-6.0.0/providers/web/meson.build	2021-02-02 21:34:20.349000100 +0100
+@@ -100,7 +100,7 @@
+ 	c_args: [
+ 		'-include',
+ 		join_paths(gda_top_build, 'config.h'),
+-		],
++		] + c_args,
+ 	link_args: [
+ 		'-Wl,--export-dynamic',
+ 		],
+--- libgda-6.0.0/providers/web/libmain.c.orig	2021-02-01 01:29:25.249770600 +0100
++++ libgda-6.0.0/providers/web/libmain.c	2021-02-02 21:37:06.051435747 +0100
+@@ -81,7 +81,7 @@
+ 	gchar *ret, *dir;
+ 
+ 	dir = gda_gbr_get_file_path (GDA_DATA_DIR, LIBGDA_ABI_NAME, NULL);
+-	ret = gda_server_provider_load_file_contents (module_path, dir, "web_specs_dsn.xml");
++	ret = gda_server_provider_load_resource_contents ("web", "web_specs_dsn.xml");
+ 	g_free (dir);
+ 	if (ret)
+ 		return ret;
+@@ -95,7 +95,7 @@
+ 	gchar *ret, *dir;
+ 
+ 	dir = gda_gbr_get_file_path (GDA_DATA_DIR, LIBGDA_ABI_NAME, NULL);
+-	ret = gda_server_provider_load_file_contents (module_path, dir, "web_specs_auth.xml");
++	ret = gda_server_provider_load_resource_contents ("web", "web_specs_auth.xml");
+ 	g_free (dir);
+ 	if (ret)
+ 		return ret;
