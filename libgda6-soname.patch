@@ -1,0 +1,52 @@
+--- libgda-6.0.0/libgda/meson.build.orig	2021-02-01 01:29:25.121580000 +0100
++++ libgda-6.0.0/libgda/meson.build	2021-06-11 18:28:23.665679350 +0200
+@@ -342,8 +342,8 @@
+ libgda = library(
+ 	'gda-'+project_api_version,
+ 	libgda_source_all+valacs,
+-	soversion : LT_VERSION+'.'+LT_AGE+'.'+LT_REVISION,
+-	version : LT_VERSION,
++	version : LT_VERSION+'.'+LT_AGE+'.'+LT_REVISION,
++	soversion : LT_VERSION,
+ 	dependencies : libgda_deps,
+ 	c_args : [
+ 		libgda_cargs,
+--- libgda-6.0.0/libgda-report/meson.build.orig	2021-02-01 01:29:25.069502600 +0100
++++ libgda-6.0.0/libgda-report/meson.build	2021-06-11 18:28:45.042230210 +0200
+@@ -30,8 +30,8 @@
+ libgda_report = library(
+ 	'gda-report-'+project_api_version,
+ 	libgda_report_sources,
+-	soversion : LT_VERSION+'.'+LT_AGE+'.'+LT_REVISION,
+-	version : LT_VERSION,
++	version : LT_VERSION+'.'+LT_AGE+'.'+LT_REVISION,
++	soversion : LT_VERSION,
+ 	dependencies : [libgda_dep,
+ 			gdkpixbuf_dep,
+ 			inc_libgda_reporth_dep,
+--- libgda-6.0.0/libgda-ui/meson.build.orig	2021-02-01 01:29:25.093538300 +0100
++++ libgda-6.0.0/libgda-ui/meson.build	2021-06-11 18:28:55.305507942 +0200
+@@ -135,8 +135,8 @@
+ 
+ libgdaui = library('gda-ui-'+project_api_version,
+ 	libgda_ui_sources_all,
+-	soversion : LT_VERSION+'.'+LT_AGE+'.'+LT_REVISION,
+-	version : LT_VERSION,
++	version : LT_VERSION+'.'+LT_AGE+'.'+LT_REVISION,
++	soversion : LT_VERSION,
+ 	dependencies: [
+ 		libgda_ui_deps,
+ 		inc_rooth_dep
+--- libgda-6.0.0/libgda-xslt/meson.build.orig	2021-02-01 01:29:25.093538300 +0100
++++ libgda-6.0.0/libgda-xslt/meson.build	2021-06-11 18:29:04.372125491 +0200
+@@ -17,8 +17,8 @@
+ libgda_xslt = library(
+ 	'gda-xslt-'+project_api_version,
+ 	libgda_xslt_sources,
+-	soversion : LT_VERSION+'.'+LT_AGE+'.'+LT_REVISION,
+-	version : LT_VERSION,
++	version : LT_VERSION+'.'+LT_AGE+'.'+LT_REVISION,
++	soversion : LT_VERSION,
+ 	dependencies : [libgda_dep,
+ 			libxslt_dep,
+ 			inc_libgda_xslth_dep,

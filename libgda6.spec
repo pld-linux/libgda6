@@ -24,12 +24,13 @@ Summary:	GNU Data Access library
 Summary(pl.UTF-8):	Biblioteka GNU Data Access
 Name:		libgda6
 Version:	6.0.0
-Release:	1
+Release:	2
 License:	LGPL v2+/GPL v2+
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/libgda/6.0/libgda-%{version}.tar.xz
 # Source0-md5:	2e059e57b0620fb23fc74f3d2bd0fd1f
 Patch0:		%{name}-web.patch
+Patch1:		%{name}-soname.patch
 URL:		https://www.gnome-db.org/
 %{?with_firebird:BuildRequires:	Firebird-devel}
 BuildRequires:	autoconf >= 2.68
@@ -387,6 +388,7 @@ Plik katalogu oraz ikony libgda dla Glade.
 %prep
 %setup -q -n libgda-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' \
 	libgda-report/RML/trml2html/trml2html.py \
@@ -425,6 +427,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
+
+%post	ui -p /sbin/ldconfig
+%postun	ui -p /sbin/ldconfig
 
 %post tools
 %update_icon_cache hicolor
