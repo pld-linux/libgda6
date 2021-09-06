@@ -24,7 +24,7 @@ Summary:	GNU Data Access library
 Summary(pl.UTF-8):	Biblioteka GNU Data Access
 Name:		libgda6
 Version:	6.0.0
-Release:	2
+Release:	3
 License:	LGPL v2+/GPL v2+
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/libgda/6.0/libgda-%{version}.tar.xz
@@ -133,19 +133,19 @@ GNU Data Access static libraries.
 %description static -l pl.UTF-8
 Statyczne biblioteki GNU Data Access.
 
-%package -n vala-libgda5
-Summary:	libgda 5.x API for Vala language
-Summary(pl.UTF-8):	API libgda 5.x dla języka Vala
+%package -n vala-libgda6
+Summary:	libgda 6.x API for Vala language
+Summary(pl.UTF-8):	API libgda 6.x dla języka Vala
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	vala >= 2:0.26.0
 BuildArch:	noarch
 
-%description -n vala-libgda5
-libgda 5.x API for Vala language.
+%description -n vala-libgda6
+libgda 6.x API for Vala language.
 
-%description -n vala-libgda5 -l pl.UTF-8
-API libgda 5.x dla języka Vala.
+%description -n vala-libgda6 -l pl.UTF-8
+API libgda 6.x dla języka Vala.
 
 %package ui
 Summary:	GNU Data Access UI library
@@ -186,18 +186,18 @@ GNU Data Access UI static library.
 %description ui-static -l pl.UTF-8
 Statyczna biblioteka GNU Data Access UI.
 
-%package -n vala-libgda5-ui
-Summary:	libgda-ui 5.x API for Vala language
-Summary(pl.UTF-8):	API libgda-ui 5.x dla języka Vala
+%package -n vala-libgda6-ui
+Summary:	libgda-ui 6.x API for Vala language
+Summary(pl.UTF-8):	API libgda-ui 6.x dla języka Vala
 Group:		Development/Libraries
 Requires:	%{name}-ui-devel = %{version}-%{release}
-Requires:	vala-libgda5 = %{version}-%{release}
+Requires:	vala-libgda6 = %{version}-%{release}
 
-%description -n vala-libgda5-ui
-libgda-ui 5.x API for Vala language.
+%description -n vala-libgda6-ui
+libgda-ui 6.x API for Vala language.
 
-%description -n vala-libgda5-ui -l pl.UTF-8
-API libgda-ui 5.x dla języka Vala.
+%description -n vala-libgda6-ui -l pl.UTF-8
+API libgda-ui 6.x dla języka Vala.
 
 %package apidocs
 Summary:	GNU Data Access API documentation
@@ -503,7 +503,7 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %if %{with vala}
-%files -n vala-libgda5
+%files -n vala-libgda6
 %defattr(644,root,root,755)
 %{_datadir}/vala/vapi/libgda-6.0.deps
 %{_datadir}/vala/vapi/libgda-6.0.vapi
@@ -533,7 +533,7 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %if %{with vala}
-%files -n vala-libgda5-ui
+%files -n vala-libgda6-ui
 %defattr(644,root,root,755)
 %{_datadir}/vala/vapi/libgdaui-6.0.vapi
 %endif
