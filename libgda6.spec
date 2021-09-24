@@ -24,7 +24,7 @@ Summary:	GNU Data Access library
 Summary(pl.UTF-8):	Biblioteka GNU Data Access
 Name:		libgda6
 Version:	6.0.0
-Release:	3
+Release:	4
 License:	LGPL v2+/GPL v2+
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/libgda/6.0/libgda-%{version}.tar.xz
