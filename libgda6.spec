@@ -387,8 +387,8 @@ Plik katalogu oraz ikony libgda dla Glade.
 
 %prep
 %setup -q -n libgda-%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' \
 	libgda-report/RML/trml2html/trml2html.py \
