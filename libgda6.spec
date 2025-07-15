@@ -395,7 +395,7 @@ Plik katalogu oraz ikony libgda dla Glade.
 	libgda-report/RML/trml2pdf/trml2pdf.py
 
 %build
-%meson build \
+%meson \
 	-Dexperimental=true \
 	-Dgraphviz=true \
 	-Dlibsecret=true \
@@ -404,12 +404,12 @@ Plik katalogu oraz ikony libgda dla Glade.
 	%{?with_ldap:-Dldap=true} \
 	-Dweb=true
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %py3_comp $RPM_BUILD_ROOT%{_datadir}/libgda-6.0/gda_trml2html
 %py3_comp $RPM_BUILD_ROOT%{_datadir}/libgda-6.0/gda_trml2pdf
