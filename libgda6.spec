@@ -33,6 +33,7 @@ Patch0:		%{name}-web.patch
 Patch1:		%{name}-soname.patch
 Patch2:		meson0.61.patch
 Patch3:		types.patch
+Patch4:		vapi-deps.patch
 URL:		https://www.gnome-db.org/
 %{?with_firebird:BuildRequires:	Firebird-devel}
 BuildRequires:	autoconf >= 2.68
@@ -395,6 +396,7 @@ Plik katalogu oraz ikony libgda dla Glade.
 %patch -P1 -p1
 %patch -P2 -p1
 %patch -P3 -p1
+%patch -P4 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' \
 	libgda-report/RML/trml2html/trml2html.py \

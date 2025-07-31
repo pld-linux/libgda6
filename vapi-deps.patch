@@ -1,0 +1,11 @@
+--- libgda-6.0.0/libgda-ui/meson.build.orig	2025-07-31 13:59:00.732395800 +0200
++++ libgda-6.0.0/libgda-ui/meson.build	2025-07-31 14:16:59.995452340 +0200
+@@ -209,7 +209,7 @@
+ 		],
+ 	output: 'libgdaui-'+project_api_version+'.vapi',
+ 	install: true,
+-	depends: libgdaui,
++	depends: [libgdaui, libgda_vapi],
+ 	install_dir: join_paths(get_option('datadir'),'vala','vapi')
+ 	)
+ endif
