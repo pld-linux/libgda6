@@ -31,6 +31,7 @@ Source0:	https://download.gnome.org/sources/libgda/6.0/libgda-%{version}.tar.xz
 # Source0-md5:	2e059e57b0620fb23fc74f3d2bd0fd1f
 Patch0:		%{name}-web.patch
 Patch1:		%{name}-soname.patch
+Patch2:		meson0.61.patch
 URL:		https://www.gnome-db.org/
 %{?with_firebird:BuildRequires:	Firebird-devel}
 BuildRequires:	autoconf >= 2.68
@@ -389,6 +390,7 @@ Plik katalogu oraz ikony libgda dla Glade.
 %setup -q -n libgda-%{version}
 %patch -P0 -p1
 %patch -P1 -p1
+%patch -P2 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' \
 	libgda-report/RML/trml2html/trml2html.py \

@@ -1,0 +1,33 @@
+From b9833107e9ee25632955e45b17cd6c96ac205ab4 Mon Sep 17 00:00:00 2001
+From: Michal Vasilek <michal@vasilek.cz>
+Date: Wed, 9 Mar 2022 23:07:22 +0100
+Subject: [PATCH] meson: remove positional args from i18n.merge_file
+
+This causes the build to fail with meson 0.61+
+---
+ tools/browser/meson.build | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tools/browser/meson.build b/tools/browser/meson.build
+index 39459c39c..4321d8c39 100644
+--- a/tools/browser/meson.build
++++ b/tools/browser/meson.build
+@@ -84,7 +84,7 @@ gda_browser_sources += gda_browser_sourcesf
+ 
+ subdir('data')
+ 
+-i18n.merge_file('browser_desktop',
++i18n.merge_file(
+ 	po_dir: join_paths(meson.source_root(),'po'),
+ 	type: 'desktop',
+ 	input: 'org.gnome.gda.Browser.desktop.in',
+@@ -105,4 +105,4 @@ custom_target('org.gnome.gda.Browser.appdata',
+ 		install_dir: join_paths(get_option('datadir'),'metainfo')
+ 		)
+ 
+-browser_deps += inc_browserdirh_dep
+\ No newline at end of file
++browser_deps += inc_browserdirh_dep
+-- 
+GitLab
+
