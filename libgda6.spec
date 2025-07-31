@@ -82,6 +82,8 @@ Requires:	glib2 >= 1:2.32.0
 Conflicts:	libgda4 < 4.2.10-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		filterout_cpp	-DNDEBUG
+
 %description
 GNU Data Access is an attempt to provide uniform access to different
 kinds of data sources (databases, information servers, mail spools,
