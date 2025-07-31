@@ -1,0 +1,18 @@
+--- libgda-6.0.0/tools/common/web-server.c.orig	2021-02-01 01:29:25.285824300 +0100
++++ libgda-6.0.0/tools/common/web-server.c	2025-07-31 14:10:13.173038550 +0200
+@@ -1927,7 +1927,6 @@
+ 		webserver->priv->terminals_list = g_slist_prepend (webserver->priv->terminals_list,
+ 								   console);
+ 		GTimeVal *lastused;
+-		lastused = t_context_get_last_time_used (console);
+ 		g_get_current_time (lastused);
+ 		if (!webserver->priv->term_timer)
+ 			webserver->priv->term_timer = g_timeout_add_seconds (5, (GSourceFunc) delete_consoles,
+@@ -1962,7 +1961,6 @@
+ 
+ 	/* create response */
+ 	GTimeVal *lastused;
+-	lastused = t_context_get_last_time_used (console);
+ 	g_get_current_time (lastused);
+ 	cmd = g_strstrip (cmd);
+ 	if (*cmd) {
